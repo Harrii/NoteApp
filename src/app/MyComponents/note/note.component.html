@@ -1,4 +1,11 @@
-<div class="container form-floating  mt-5 ">
-    <textarea class="form-control" placeholder="Write your notes here"  id="notes" style="height: 500px;"></textarea>
-    <label class="ms-3"  for="notes">Notes</label>
+<div >
+    <form (ngSubmit)="onSubmit()">
+        <div class="container form-floating   mt-5 ">
+            <input type="text" name="title" id="titl" class="  mb-2" placeholder="Title" [(ngModel)]="title">
+            <textarea class="form-control" placeholder="Write your notes here" name="nt" id="notes" style="height: 500px;"  [(ngModel)]="content"></textarea>
+            <label class="ms-3 mt-5"  for="notes">Notes</label>
+            <button type="submit" class="pos btn btn-dark  btn-lg mt-2">Save</button>
+            <button class="btn btn-dark float-left btn-lg mt-2 " routerLink="/">Back</button>
+        </div>
+    </form>
 </div>

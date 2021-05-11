@@ -1,5 +1,13 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css");
+@import "./../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 #notes{
     background-color:ivory;
+}
+#titl{
+
+    border-color: rgb(93, 230, 248);
+    border-radius: 10px;
+}
+.pos{
+    float: right;
 }
