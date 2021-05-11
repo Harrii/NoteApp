@@ -8,7 +8,7 @@
                 <mat-list-item><b>Title: </b> {{ note.Title}}</mat-list-item>
                 <mat-list-item><p><b>Content: </b> {{ note.Content}}</p></mat-list-item>
                 <button class=" mx-3 mb-2 btn btn-danger ">Edit</button>
-                <button class=" mx-1 mb-2 btn btn-danger ">Delete</button>
+                <button class=" mx-1 mb-2 btn btn-danger " (click)="onClick(note)">Delete</button>
             </mat-list>
         </mat-card>
     

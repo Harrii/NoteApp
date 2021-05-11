@@ -11,7 +11,7 @@
                 <mat-list-item><b>Title: </b> {{ notes.Title}}</mat-list-item>
                 <mat-list-item><p><b>Content: </b> {{ notes.Content}}</p></mat-list-item>
                 <button class=" mx-3 mb-2 btn btn-danger ">Edit</button>
-                <button class=" mx-1 mb-2 btn btn-danger ">Delete</button>
+                <button class=" mx-1 mb-2 btn btn-danger " (click)="onClick(notes)">Delete</button>
             </mat-list>
         </mat-card>
     

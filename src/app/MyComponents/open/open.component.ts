@@ -18,10 +18,20 @@ export class OpenComponent implements OnInit {
     else
     {
       this.notes=JSON.parse(this.LocalItem);
+      console.log(this.notes[this.notes.length-1].sl);
     }
    }
 
   ngOnInit(): void {
   }
 
+  onClick(note:Notes)
+  {
+    console.log(note);
+    const index=this.notes.indexOf(note);
+    this.notes.splice(index,1);
+    localStorage.setItem("notes",JSON.stringify(this.notes));
+
+
+  }
 }
