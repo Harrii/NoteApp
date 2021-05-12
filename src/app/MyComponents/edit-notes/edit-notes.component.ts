@@ -15,27 +15,29 @@ export class EditNotesComponent implements OnInit {
   
 
   constructor(
-  private noteService:NotesService
-  )
+  private noteService:NotesService )
+  
   { 
-    this.localItem=localStorage.getItem("notes");
-    if(this.localItem == null){
-    this.allnote = [];
-    }
-    else{ 
-      this.allnote = JSON.parse(this.localItem); 
-    } 
+    this.allnote= noteService.getNote();
+    console.log(this.allnote);
+    //this.localItem=localStorage.getItem("notes");
+  //   if(this.localItem == null){
+  //   this.allnote = [];
+  //   }
+  //   else{ 
+  //     this.allnote = JSON.parse(this.localItem); 
+  //   } 
   
     
     
-  }
+   }
   
   ngOnInit(): void {
   }
 addNote(note:Notes){
-  console.log(note);
-  this.allnote.push(note);
-  localStorage.setItem("notes", JSON.stringify(this.allnote));
+ // console.log(note);
+  //this.allnote.push(note);
+  //localStorage.setItem("notes", JSON.stringify(this.allnote));
 
 }
 onClick(notes:Notes)
@@ -43,6 +45,6 @@ onClick(notes:Notes)
   console.log(notes);
   const index = this.allnote.indexOf(notes);
   this.allnote.splice(index, 1);
-  localStorage.setItem("notes", JSON.stringify(this.allnote));
+  //localStorage.setItem("notes", JSON.stringify(this.allnote));
 }
 }

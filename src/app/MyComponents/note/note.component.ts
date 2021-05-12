@@ -43,8 +43,9 @@ const Note={
   Title:this.title,
   Content:this.content
 }
-console.log(Note.sl)
-this.noteAdd.emit(Note);
+this.noteservice.addNote(Note);
+console.log(Note);
+//this.noteAdd.emit(Note);
 
 
 }

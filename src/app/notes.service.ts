@@ -24,6 +24,10 @@ localitem:string;
   addNote(note)
   {
     this.allnote.push(note);
-    localStorage.setItem("notes",JSON.stringify(this.allnote))
+    //localStorage.setItem("notes",JSON.stringify(this.allnote))
+  }
+  getNote()
+  {
+    return this.allnote;
   }
 }

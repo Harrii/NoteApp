@@ -8,16 +8,18 @@ import { HomeComponent } from './MyComponents/home/home.component';
 import { EditNotesComponent } from './MyComponents/edit-notes/edit-notes.component';
 import { MatCardModule } from '@angular/material/card'
 import { MatListModule } from '@angular/material/list';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotesService } from './notes.service';
 import { OpenComponent } from './MyComponents/open/open.component';
+import { EditComponent } from './MyComponents/edit/edit.component';
 @NgModule({
   declarations: [
     AppComponent,
     NoteComponent,
     HomeComponent,
     EditNotesComponent,
-    OpenComponent
+    OpenComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { OpenComponent } from './MyComponents/open/open.component';
     BrowserAnimationsModule,
     MatCardModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [NotesService],
