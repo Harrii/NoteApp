@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormsModule,FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormsModule } from '@angular/forms';
+import { from } from 'rxjs';
 import { Notes } from 'src/app/Notes';
 import { NotesService } from 'src/app/notes.service';
+import { MatDialog,MatDialogRef } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-open',
@@ -13,10 +16,13 @@ export class OpenComponent implements OnInit {
   LocalItemSecond:boolean;
   notes:Notes[];
   temp_notes:Notes[];
-  title:any;
+  title:string;
   cont:string;
   Eform:FormGroup;
-  constructor( private notesService:NotesService,private fb:FormBuilder) {
+  para:number;
+  index:number;
+  dte:string=new Date().toLocaleString();
+  constructor( private notesService:NotesService,private fb:FormBuilder,private dialog:MatDialog) {
     // this.LocalItem=localStorage.getItem("notes");
     // if(this.LocalItem==null){
     //   this.notes=[];
@@ -35,6 +41,10 @@ export class OpenComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.Eform=new FormGroup({
+      ti:new FormControl(null),
+      cnt:new FormControl(null)
+    })
   }
 
   onClick(note:Notes)
@@ -49,6 +59,7 @@ export class OpenComponent implements OnInit {
   {
     this.LocalItem=false;
     this.LocalItemSecond=true;
+    
       console.log(this.temp_notes[i].Title);
       // this.title=this.notes2[i];
       // console.log(this.title);
@@ -57,6 +68,7 @@ export class OpenComponent implements OnInit {
     ti: [this.temp_notes[i].Title],
     cnt:[this.temp_notes[i].Content]
 });
+this.para=i;
   }
 
   close(){
@@ -64,4 +76,19 @@ export class OpenComponent implements OnInit {
     this.LocalItemSecond=false;
    
   }
+
+  updateNote(){
+    console.log(this.para);
+    this.index=this.para;
+    const Note={
+      sl:this.notes[this.para].sl,
+      NDate:this.dte,
+      Title:this.title,
+      Content:this.cont
+    }
+    this.notes.splice(this.para, 1,Note);
+    alert("Update Success");
+    this.LocalItem=true;
+    this.LocalItemSecond=false;
+}
 }
