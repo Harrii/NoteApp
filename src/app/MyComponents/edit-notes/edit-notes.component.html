@@ -6,12 +6,12 @@
         <mat-card style="width: 400px;">
             <mat-card-title>Your Notes</mat-card-title>
             <mat-list *ngFor="let notes of allnote" >
-                <mat-list-item><b>No: </b> {{notes.sl}}</mat-list-item>
+                <mat-list-item ><b>No: </b> {{notes.id}}</mat-list-item>
                 <mat-list-item><b>Date: </b> {{notes.NDate}}</mat-list-item>
                 <mat-list-item><b>Title: </b> {{ notes.Title}}</mat-list-item>
                 <mat-list-item><p><b>Content: </b> {{ notes.Content}}</p></mat-list-item>
-                <button class=" mx-3 mb-2 btn btn-danger ">Edit</button>
-                <button class=" mx-1 mb-2 btn btn-danger " (click)="onClick(notes)">Delete</button>
+                <button class=" mx-3 mb-2 btn btn-danger " [routerLink]="['/note',notes.id]" >Edit</button>
+                <button class=" mx-1 mb-2 btn btn-danger " (click)="onClick(notes.id)">Delete</button>
             </mat-list>
         </mat-card>
     

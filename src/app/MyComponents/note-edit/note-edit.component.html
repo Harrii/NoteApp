@@ -1,0 +1,13 @@
+<div >
+    
+    <form   >
+        <div class="container form-floating   mt-5 mx-5 ">
+            <input type="text" name="title" id="titl" class="  mb-2"  [(ngModel)]= notes.Title >
+            <textarea class="form-control" name="nt" id="notes"  style="height: 500px;" [(ngModel)]=notes.Content ></textarea>
+        
+            <button type="submit" class="pos btn btn-dark  btn-lg mt-2" (click)="Update()">Save</button>
+            <button class="btn btn-dark float-left btn-lg mt-2 " routerLink="/edit">Back</button>
+        </div>
+    </form>
+    
+</div>

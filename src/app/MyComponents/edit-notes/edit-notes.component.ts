@@ -1,7 +1,9 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { from } from 'rxjs';
 import { Notes } from './../../Notes';
 import { NotesService } from './../../notes.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-edit-notes',
@@ -15,11 +17,12 @@ export class EditNotesComponent implements OnInit {
   
 
   constructor(
-  private noteService:NotesService )
+  private noteService:NotesService,
+  private loc:Location )
   
   { 
-    this.allnote= noteService.getNote();
-    console.log(this.allnote);
+    
+    
     //this.localItem=localStorage.getItem("notes");
   //   if(this.localItem == null){
   //   this.allnote = [];
@@ -27,24 +30,28 @@ export class EditNotesComponent implements OnInit {
   //   else{ 
   //     this.allnote = JSON.parse(this.localItem); 
   //   } 
+  this.noteService.getNote().subscribe(Notes=>this.allnote=Notes);
   
     
     
    }
   
   ngOnInit(): void {
+    
   }
-addNote(note:Notes){
- // console.log(note);
-  //this.allnote.push(note);
-  //localStorage.setItem("notes", JSON.stringify(this.allnote));
+EditNote(notes:number){
+ console.log(notes);
+  
 
 }
-onClick(notes:Notes)
+onClick(id:number)
 {
-  console.log(notes);
-  const index = this.allnote.indexOf(notes);
-  this.allnote.splice(index, 1);
-  //localStorage.setItem("notes", JSON.stringify(this.allnote));
+  
+  console.log(id);
+  this.noteService.deleteNote(id).subscribe(data=>console.log(data));
+  alert("Deleted");
+  window.location.reload()
+  
+  
 }
 }

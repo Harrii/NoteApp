@@ -33,8 +33,8 @@ export class OpenComponent implements OnInit {
     //   this.notes=JSON.parse(this.LocalItem);
     //   console.log(this.notes[this.notes.length-1].sl);
     // }
-    this.notes=notesService.getNote();
-    this.temp_notes=notesService.getNote();
+    // this.notes=notesService.getNote();
+    // this.temp_notes=notesService.getNote();
     this.LocalItem=true;
     this.LocalItemSecond=false;
 
@@ -45,6 +45,9 @@ export class OpenComponent implements OnInit {
       ti:new FormControl(null),
       cnt:new FormControl(null)
     })
+    this.notesService.getNote().subscribe(Notes=>this.notes=Notes);
+    console.log(this.notes);
+    this.notesService.getNote().subscribe(Notes => this.temp_notes=Notes);
   }
 
   onClick(note:Notes)
@@ -81,12 +84,13 @@ this.para=i;
     console.log(this.para);
     this.index=this.para;
     const Note={
-      sl:this.notes[this.para].sl,
-      NDate:this.dte,
-      Title:this.title,
-      Content:this.cont
+      // sl:this.notes[this.para].sl,
+      // id:this.notes.
+      // NDate:this.dte,
+      // Title:this.title,
+      // Content:this.cont
     }
-    this.notes.splice(this.para, 1,Note);
+   // this.notes.splice(this.para, 1,Note);
     alert("Update Success");
     this.LocalItem=true;
     this.LocalItemSecond=false;

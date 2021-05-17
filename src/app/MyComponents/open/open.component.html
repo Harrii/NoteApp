@@ -3,7 +3,7 @@
         <mat-card>
             <mat-card-title>Your Notes</mat-card-title>
             <mat-list *ngFor="let note of notes,index as i" >
-                <mat-list-item><b>No: </b> {{note.sl}}</mat-list-item>
+                <mat-list-item><b>No: </b> {{note.id}}</mat-list-item>
                 <mat-list-item><b>Date: </b> {{note.NDate}}</mat-list-item>
                 <mat-list-item><b>Title: </b> {{ note.Title}}</mat-list-item>
                 <mat-list-item><p><b>Content: </b> {{ note.Content}}</p></mat-list-item>

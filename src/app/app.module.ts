@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+// import { HttpModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NoteComponent } from './MyComponents/note/note.component';
 import { HomeComponent } from './MyComponents/home/home.component';
@@ -15,6 +17,7 @@ import { OpenComponent } from './MyComponents/open/open.component';
 import { EditComponent } from './MyComponents/edit/edit.component';
 import { from } from 'rxjs';
 import { AboutComponent } from './MyComponents/about/about.component';
+import { NoteEditComponent } from './MyComponents/note-edit/note-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,8 @@ import { AboutComponent } from './MyComponents/about/about.component';
     EditNotesComponent,
     OpenComponent,
     EditComponent,
-    AboutComponent
+    AboutComponent,
+    NoteEditComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { AboutComponent } from './MyComponents/about/about.component';
     MatListModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
     
   ],
   providers: [NotesService],
