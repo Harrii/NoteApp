@@ -50,12 +50,13 @@ export class OpenComponent implements OnInit {
     this.notesService.getNote().subscribe(Notes => this.temp_notes=Notes);
   }
 
-  onClick(note:Notes)
+  onClick(id:number)
   {
-    console.log(note);
-    const index=this.notes.indexOf(note);
-    this.notes.splice(index,1);
-    //localStorage.setItem("notes",JSON.stringify(this.notes));
+    console.log(id);
+    this.notesService.deleteNote(id).subscribe(data=>console.log(data)
+    );
+    alert("Deleted");
+    window.location.reload();
   }
  
   open(i:number)
@@ -80,19 +81,5 @@ this.para=i;
    
   }
 
-  updateNote(){
-    console.log(this.para);
-    this.index=this.para;
-    const Note={
-      // sl:this.notes[this.para].sl,
-      // id:this.notes.
-      // NDate:this.dte,
-      // Title:this.title,
-      // Content:this.cont
-    }
-   // this.notes.splice(this.para, 1,Note);
-    alert("Update Success");
-    this.LocalItem=true;
-    this.LocalItemSecond=false;
-}
+  
 }

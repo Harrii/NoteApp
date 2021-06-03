@@ -7,27 +7,15 @@
                 <mat-list-item><b>Date: </b> {{note.NDate}}</mat-list-item>
                 <mat-list-item><b>Title: </b> {{ note.Title}}</mat-list-item>
                 <mat-list-item><p><b>Content: </b> {{ note.Content}}</p></mat-list-item>
-                <button class=" mx-3 mb-2 btn btn-danger " (click)="open(i)" >Edit</button>
-                <button class=" mx-1 mb-2 btn btn-danger " (click)="onClick(note)">Delete</button>
+                <button class=" mx-3 mb-2 btn btn-danger "  [routerLink]="['/note',note.id]" >Edit</button>
+                <button class=" mx-1 mb-2 btn btn-danger " (click)="onClick(note.id)">Delete</button>
             </mat-list>
         </mat-card>
     
         <!-- <input type="text" [formControl]="titl"> -->
         
         
-    </div>
-    <div *ngIf="notes" class="mt-3 mx-3 " [hidden]="LocalItem">
-        <form [formGroup]="Eform">
-            <div class="container mt-5 row" >
-                <input type="text" id="titl" class="  mb-2" formControlName="ti" [(ngModel)]="title">
-                <textarea class="form-control" placeholder="Write your notes here" name="nt" id="notes" style="height: 500px;" formControlName="cnt" [(ngModel)]="cont"></textarea>
-                <div id="parent_div_1">
-                    <div class="child_div_1"><button type="submit" class="  btn btn-dark  btn-lg mt-2" (click)="updateNote()">Save</button></div>
-                    <div [hidden]="LocalItem" class="child_div_2" ><button class="btn btn-dark float-left btn-lg  mx-5 mt-2 "  (click)="close()">Back</button></div>
-                </div>
-            </div>
-        </form>
-    </div>
+    
     
    
    

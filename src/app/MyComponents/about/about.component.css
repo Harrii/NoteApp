@@ -1,0 +1,56 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css");
+address{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: blanchedalmond;
+}
+#div-main{
+    display: inline-block;
+    background-color: rgb(66, 66, 66);
+    height: fit-content;
+    width: 100%;
+}
+#div3{
+float: right;
+margin-bottom: 10px;
+margin-right: 10px;
+transition: transform .5s ease;
+}
+#div{
+    margin-top: 3px;
+    background-color: rgb(66, 66, 66);
+}
+.fa-facebook{
+    color: white;
+    padding-right: 5px;
+    transition: transform .5s ease;
+    
+}
+.fa-youtube-play{
+    color: rgb(206, 4, 4);
+    padding-right: 10px;
+    transition: transform .5s ease;
+   
+}
+.fa-twitter{
+    color: rgb(83, 4, 230);
+    padding-right: 10px;
+    transition: transform .5s ease;
+}
+.fa-github{
+    color: black;
+    padding-right: 10px;
+    transition: transform .5s ease;
+}
+.fa-linkedin{
+    color: white;
+    background-color: rgb(5, 93, 151);
+    margin-right: 10px;
+    transition: transform .5s ease;
+}
+.fa-envelope{
+    transition: transform .5s ease;
+}
+.fa-facebook:hover,.fa-twitter:hover,.fa-youtube-play:hover,.fa-github:hover,.fa-linkedin:hover,.fa-envelope:hover{
+    
+    transform: scale(1.5);
+}

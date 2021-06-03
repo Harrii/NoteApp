@@ -60,4 +60,8 @@ NoteForm:FormGroup;
     
     
     }
+    Back()
+    {
+      this.location.back();
+    }
 }
